@@ -575,7 +575,6 @@ nav {
     color: rgb(70, 167, 167);
     margin: 15px;
 }
-
 .container button {
     margin-top: 40px;
 }
@@ -585,8 +584,11 @@ nav {
     display: flex;
     border: none;
     background-color: transparent;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Popup Overlay */
 .popup {
     display: none;
     position: fixed;
@@ -598,25 +600,91 @@ nav {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
+/* Popup Box */
 .popup-content {
     position: relative;
     background-color: #fff;
-    padding: 25px;
-    border-radius: 5px;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
 }
 
+/* Responsive Video and Iframe */
+.popup-content video,
+.popup-content iframe {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    border-radius: 5px;
+    display: block;
+    aspect-ratio: 16 / 9; /* maintain video ratio */
+}
+
+/* Close Button */
 .close {
     position: absolute;
-    top: -20px;
-    right: 6px;
-    width: 20px;
-    height: 20px;
+    top: -10px;
+    right: -5px;
+    width: 30px;
+    height: 30px;
     text-align: center;
-    font-size: 50px;
+    font-size: 36px;
     cursor: pointer;
+    color: white;
+    background: rgb(255, 0, 0);
+    border-radius: 50%;
+    line-height: 30px;
 }
+
+/* Tablet and below */
+@media (max-width: 768px) {
+    .popup-content {
+        padding: 12px;
+        max-width: 95%;
+        max-height: 90vh;
+    }
+
+    .popup-content video,
+    .popup-content iframe {
+        max-height: 60vh;
+    }
+
+    .close {
+        font-size: 30px;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+    }
+}
+
+/* Small devices */
+@media (max-width: 480px) {
+    .popup-content {
+        padding: 10px;
+        max-height: 85vh;
+    }
+
+    .popup-content video,
+    .popup-content iframe {
+        max-height: 50vh;
+    }
+
+    .close {
+        font-size: 26px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+    }
+}
+
 
 /* -------------------- RESPONSIVE MEDIA QUERIES -------------------- */
 
