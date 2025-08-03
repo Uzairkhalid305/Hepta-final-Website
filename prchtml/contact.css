@@ -510,21 +510,22 @@ nav {
 /* CONTACT FORM */
 .contact-form-container {
   background: #fff;
-  padding: 40px;
+  padding: 2.5rem;
   flex: 2;
   min-width: 300px;
   max-width: 1000px;
   margin-top: 80px;
   margin-bottom: 80px;
-  height: 80vh;
+  height: auto;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .contact-form .form-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 80px;
+  gap: 60px;
 }
 
 .form-group {
@@ -536,15 +537,15 @@ nav {
 label {
   margin-bottom: 12px;
   color: #666;
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 
 input,
 textarea {
-  padding: 18px;
+  padding: 1rem;
   border: 2px solid #ccc;
   border-radius: 4px;
-  font-size: 18px;
+  font-size: 1rem;
   resize: vertical;
 }
 
@@ -554,13 +555,13 @@ textarea {
 
 button {
   margin-top: 30px;
-  padding: 18px 26px;
+  padding: 1rem 1.6rem;
   border: 2px solid #1abc9c;
   background-color: transparent;
   color: #000;
   cursor: pointer;
   border-radius: 4px;
-  font-size: 18px;
+  font-size: 1rem;
   transition: all 0.3s ease;
 }
 
@@ -575,37 +576,92 @@ button:hover {
   flex: 1;
   min-width: 250px;
   max-width: 600px;
-  height: 80vh;
-  padding: 30px;
-  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); */
+  height: auto;
+  padding: 2rem;
   border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .dtls h2 {
-  font-size: 26px;
+  font-size: 1.8rem;
   font-family: monospace;
   color: #1abc9c;
-  margin: 35px;
+  margin: 1.5rem 0;
 }
 
 .dtls p {
-  font-size: 36px;
+  font-size: 1.6rem;
   color: #0f0f0f;
   line-height: 1.6;
-  margin: 30px;
+  margin: 1.5rem 0;
 }
 
 /* RESPONSIVE BEHAVIOR */
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .contact-form .form-row {
+    gap: 40px;
+  }
+
+  label,
+  input,
+  textarea,
+  button,
+  .dtls p {
+    font-size: 1rem;
+  }
+
+  .dtls h2 {
+    font-size: 1.5rem;
+  }
+
+  .dtls p {
+    font-size: 1.4rem;
+  }
+}
+
+/* Small screens (mobile) */
 @media (max-width: 768px) {
   .secondall {
     flex-direction: column;
     align-items: stretch;
+    gap: 40px;
   }
 
   .contact-form-container,
   .dtls {
     width: 100%;
     max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 1.5rem;
+  }
+
+  .contact-form .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  input,
+  textarea,
+  button {
+    font-size: 0.95rem;
+    padding: 0.9rem;
+  }
+
+  .dtls h2 {
+    font-size: 1.4rem;
+    margin: 1rem 0;
+  }
+
+  .dtls p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
   }
 }
 
