@@ -1,0 +1,989 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Abril Fatface", serif;
+    /* animation: delay-body 1s ease-in; */
+}
+
+
+.header {
+    padding: 30px;
+}
+
+nav {
+    /* background-color: rgb(65, 61, 61); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 3rem;
+    margin-top: -5px;
+    position: relative;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: 900;
+    text-decoration: none;
+    z-index: 3;
+    color: #fff;
+    filter: brightness(1.5);
+    font-family: "Abril Fatface", serif;
+}
+
+/* Default state - hidden on all screens */
+.nav-links {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #175a5a;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 25px;
+    transition: all 0.3s ease;
+}
+
+/* Menu button - always visible */
+#menu {
+    display: block;
+    font-size: 4rem;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 3;
+    filter: brightness(1.5);
+    font-family: "Abril Fatface", serif;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* Cross button - hidden by default */
+#cross {
+    display: none;
+    font-size: 4rem;
+    color: #000000;
+    cursor: pointer;
+    z-index: 4;
+    /* position: fixed; */
+    top: 40px;
+    right: 35px;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* Active state - shows on all screens when menu is clicked */
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.nav-links.active li {
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.nav-links.active a {
+    color: #000000;
+    padding: 10px 20px;
+    display: block;
+    font-size: 1.8rem;
+}
+
+.nav-links.active a:hover {
+    color: rgb(23, 119, 126);
+    transform: scale(1.05);
+}
+
+/* When menu is active, hide hamburger and show cross */
+.nav-links.active ~ #menu {
+    display: none;
+}
+
+.nav-links.active ~ #cross {
+    display: block;
+}
+
+/* Media Queries for different screen sizes */
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+    .nav-links.active a {
+        font-size: 2rem;
+    }
+    
+.logo {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 800;
+    text-decoration: none;
+    z-index: 3;
+    color: #fff;
+    filter: brightness(1.5);
+    font-family: "Abril Fatface", serif;
+}
+
+
+/* Menu button - always visible */
+#menu {
+    display: block;
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 3;
+    filter: brightness(1.5);
+    font-family: "Abril Fatface", serif;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* Cross button - hidden by default */
+#cross {
+    display: none;
+    font-size: 2rem;
+    color: #000000;
+    cursor: pointer;
+    z-index: 4;
+    /* position: fixed; */
+    top: 20px;
+    right: 15px;
+    background: none;
+    border: none;
+    padding: 0;
+}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 769px) {
+    .nav-links.active {
+        padding: 0 10%;
+    }
+    .nav-links.active a {
+        font-size: 2.2rem;
+    }
+    .logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-decoration: none;
+    z-index: 3;
+    color: #fff;
+    filter: brightness(1.5);
+    font-family: "Abril Fatface", serif;
+}
+#menu {
+
+    font-size: 2rem;
+ 
+}
+
+/* Cross button - hidden by default */
+#cross {
+
+    font-size: 2rem;
+   
+}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .nav-links.active {
+        padding: 0 5%;
+    }
+    .nav-links.active a {
+        font-size: 2rem;
+    }
+    .logo {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 900;
+    text-decoration: none;
+    z-index: 3;
+    color: #fff;
+    filter: brightness(1.5);
+    font-family: "Abril Fatface", serif;
+}
+/* Menu button - always visible */
+#menu {
+    display: block;
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 3;
+    filter: brightness(1.5);
+    font-family: "Abril Fatface", serif;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* Cross button - hidden by default */
+#cross {
+    display: none;
+    font-size: 2rem;
+    color: #000000;
+    cursor: pointer;
+    z-index: 4;
+    /* position: fixed; */
+    top: 40px;
+    right: 35px;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px){
+    .nav-links.active {
+        padding: 0 20%;
+    }
+    .nav-links.active a {
+        font-size: 2rem;
+    }
+    
+.logo {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 900;
+    text-decoration: none;
+    z-index: 3;
+    color: #fff;
+    filter: brightness(1.5);
+    font-family: "Abril Fatface", serif;
+}
+
+
+/* Menu button - always visible */
+#menu {
+    display: block;
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 3;
+    filter: brightness(1.5);
+    font-family: "Abril Fatface", serif;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* Cross button - hidden by default */
+#cross {
+    display: none;
+    font-size: 2rem;
+    color: #000000;
+    cursor: pointer;
+    z-index: 4;
+    /* position: fixed; */
+    top: 40px;
+    right: 35px;
+    background: none;
+    border: none;
+    padding: 0;
+}
+}
+
+/* For very small devices (less than 400px) */
+@media (max-width: 400px) {
+    nav {
+        /* padding: 1rem; */
+    }
+    .logo {
+        font-size: 20px;
+    }
+    #menu {
+        font-size: 2rem;
+    }
+    #cross {
+        top: 0;
+    font-size: 2rem;
+}
+    .nav-links.active a {
+        font-size: 1.5rem;
+    }
+}
+
+
+#home {
+    position: relative;
+    background: url(./assets/img_1_long.jpg.webp) no-repeat center center/cover;
+    width: 100%;
+    height: 90vh;
+    margin-top: -150px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+#home h1,
+#home p,
+#home a,
+#home button {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    filter: brightness(1.5);
+}
+
+#home h1 {
+    color: #fff;
+    font-weight: 800;
+    font-size: 120px;
+    margin-bottom: 20px;
+    margin-top: 100px;
+    font-family: "Abril Fatface", serif;
+}
+
+#home p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+#home p a {
+    color: #464545;
+}
+
+
+
+
+/* -------------------- RESPONSIVE QUERIES -------------------- */
+
+/* Tablets and smaller */
+@media (max-width: 1024px) {
+    #home h1 {
+        font-size: 80px;
+        margin-top: 80px;
+    }
+
+    #home p {
+        font-size: 28px;
+    }
+
+    #home button {
+        padding: 20px 40px;
+        font-size: 18px;
+    }
+}
+
+/* Large phones / small tablets */
+@media (max-width: 768px) {
+    #home {
+        height: 100vh;
+        margin-top: -100px;
+    }
+
+    #home h1 {
+        font-size: 60px;
+        margin-top: 60px;
+    }
+
+    #home p {
+        font-size: 22px;
+        padding: 0 20px;
+    }
+
+    #home button {
+        padding: 18px 36px;
+        font-size: 16px;
+    }
+
+    .scroll-down {
+        font-size: 24px;
+    }
+
+    .arrow {
+        font-size: 20px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    #home {
+        height: 90vh;
+        margin-top: -80px;
+    }
+
+    #home h1 {
+        font-size: 40px;
+        margin-top: 40px;
+    }
+
+    #home p {
+        font-size: 18px;
+    }
+
+    #home button {
+        padding: 14px 28px;
+        font-size: 14px;
+    }
+
+    .scroll-down {
+        font-size: 20px;
+    }
+
+    .arrow {
+        font-size: 18px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    #home h1 {
+        font-size: 32px;
+    }
+
+    #home p {
+        font-size: 16px;
+    }
+
+    #home button {
+        padding: 12px 24px;
+        font-size: 12px;
+    }
+}
+
+/*  */
+
+#about-us {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgb(190, 189, 189);
+    padding: 20px;
+    gap: 30px;
+}
+
+#about-us .image img {
+    width: 100%;
+    max-width: 800px;
+    height: 90vh;
+    object-fit: cover;
+}
+
+.about-details {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.about-details h1 {
+    font-weight: 300;
+    font-size: 55px;
+    margin-bottom: 40px;
+    font-family: "Abril Fatface", serif;
+}
+
+.about-details p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #7c7979;
+    line-height: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-details button i {
+    font-family: "Montserrat", sans-serif;
+    font-size: 60px;
+    font-weight: 100;
+    border: 2px solid gray;
+    color: #2f6363;
+    border-radius: 80%;
+    width: 60px;
+    height: 60px;
+}
+
+.about-details i:hover {
+    color: rgb(70, 167, 167);
+    cursor: pointer;
+}
+
+.about-details button h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    color: rgb(70, 167, 167);
+    margin: 15px;
+}
+
+
+
+#openVideoBtn {
+    width: 50%;
+    border: 2px solid rgb(26, 107, 107);
+    display: flex;
+    background-color: transparent;
+}
+
+
+
+/* -------------------- RESPONSIVE MEDIA QUERIES -------------------- */
+
+/* Medium screens and below (Tablets) */
+@media (max-width: 1024px) {
+    #about-us {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-details h1 {
+        font-size: 45px;
+    }
+
+    .about-details p {
+        font-size: 18px;
+    }
+
+    .about-details button i {
+        font-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .about-details button h2 {
+        font-size: 22px;
+    }
+}
+
+/* Small tablets and phones */
+@media (max-width: 768px) {
+    #about-us {
+        padding: 20px 10px;
+    }
+
+    .about-details {
+        padding: 10px;
+    }
+
+    .about-details h1 {
+        font-size: 36px;
+    }
+
+    .about-details p {
+        font-size: 16px;
+    }
+
+    .about-details button h2 {
+        font-size: 18px;
+    }
+
+    .about-details button i {
+        font-size: 40px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+    .about-details h1 {
+        font-size: 28px;
+    }
+
+    .about-details p {
+        font-size: 14px;
+        line-height: 1.8rem;
+    }
+
+    .about-details button h2 {
+        font-size: 16px;
+        margin: 10px;
+    }
+
+    .about-details button i {
+        font-size: 35px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+
+
+/*  */
+#gallery-section {
+    margin-top: 180px;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+#gallery-section h2 {
+  font-size: 90px;
+  font-weight: 500;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  font-family: "Abril Fatface", serif;
+}
+
+#gallery-section p {
+  font-size: 27px;
+  font-weight: 500;
+  width: 100%;
+  max-width: 800px;
+  margin: 10px auto;
+  font-family: "Montserrat", sans-serif;
+  color: #928e8e;
+  line-height: 3rem;
+}
+
+.main-display {
+  position: relative;
+  max-width: 1600px;
+  width: 100%;
+  margin: auto;
+}
+
+.main-display img {
+  width: 100%;
+  max-height: 1000px;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 40px;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.nav-icon:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.nav-icon.left {
+  left: -10px;
+  font-size: 60px;
+  background: none;
+  color: rgb(0, 0, 0);
+}
+
+.nav-icon.right {
+  right: 0px;
+  font-size: 60px;
+  background: none;
+  color: rgb(0, 0, 0);
+}
+
+.gallery {
+  display: none;
+}
+/*  */
+
+#news {
+  width: 100%;
+  min-height: 100vh;
+  background: #f5fafa;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+#news .headings h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 100px auto 40px auto;
+  letter-spacing: 2px;
+  text-align: center;
+}
+#news .headings p {
+  font-size: 25px;
+  font-weight: 300;
+  width: 100%;
+  max-width: 800px;
+  margin: 10px auto;
+  font-family: "Montserrat", sans-serif;
+  color: #928e8e;
+  line-height: 3rem;
+}
+
+/* === USER CONTAINER === */
+.users {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  gap: 40px;
+  flex-wrap: nowrap; /* 💡 Prevent wrap by default (large screens) */
+}
+
+.user {
+  width: 60%;
+  min-height: 500px;
+  padding: 20px;
+}
+.user h2{
+    font-size: 30px;
+}
+
+.user img {
+  width: 100%;
+  /* border-radius: 50%; */
+}
+
+
+
+#news .user p{
+  color: rgb(143, 141, 141);
+  font-size: 25px;
+}
+
+/* === MEDIA QUERIES === */
+
+/* Medium screens */
+@media (max-width: 1024px) {
+  .users {
+    flex-wrap: wrap; /* ✅ Allow wrap on medium and small screens */
+    justify-content: center;
+  }
+
+  .user {
+    width: 80%;
+    text-align: center;
+  }
+
+  #news .headings h1 {
+    font-size: 4rem;
+    margin: 60px auto 30px auto;
+  }
+
+  #news .user p {
+    font-size: 20px;
+    line-height: 2.5rem;
+  }
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  .user {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #news .headings h1 {
+    font-size: 3rem;
+    margin: 40px auto 20px auto;
+  }
+
+  #news .user p {
+    font-size: 18px;
+    line-height: 2rem;
+  }
+}
+/*  */
+footer {
+  width: 100%;
+  background-color: #0f0e0e;
+  padding: 60px 20px;
+}
+
+.boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap; 
+  padding-top: 40px;
+  /* border: 2px solid red; */
+}
+
+footer .boxes h2 {
+  color: #fff;
+  font-size: 26px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+footer .boxes .details {
+  width: 20%;
+  min-width: 220px;
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  /* border: 2px solid rgb(92, 64, 64); */
+
+}
+
+footer .details a {
+  color: gray;
+  text-decoration: none;
+  margin-top: 15px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+footer .details i,
+footer .details p {
+  color: gray;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  line-height: 2rem;
+}
+
+/* Email input section */
+#email {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+#email input {
+  flex: 1;
+  font-size: 16px;
+  background: none;
+  font-style: italic;
+  border: none;
+  border-bottom: 1px solid gray;
+  color: #fff;
+}
+
+#email input:focus {
+  outline: none;
+  border-bottom: 1px solid gray;
+  box-shadow: none;
+}
+
+#email button {
+  background: none;
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 5px 10px;
+  color: #fff;
+}
+
+#email button i {
+  font-size: 22px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Social Icons */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 30px 0;
+}
+
+.footer-icons a {
+  font-size: 30px;
+  color: #a5a5a5;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-icons a:hover {
+  color: #fff;
+}
+
+/* Footer bottom */
+.last {
+  color: #fff;
+  font-size: 20px;
+font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  width: 100%;
+  margin-top: 40px;
+  padding: 10px;
+  border-top: 1px solid gray;
+}
+
+.last a {
+  color: #a5a3a3;
+
+  text-align: center;
+}
+
+/* MEDIA QUERY: Small screens */
+@media (max-width: 768px) {
+  .boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .boxes .details {
+    width: 90%;
+    text-align: center;
+  }
+
+  #email {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  #email input,
+  #email button {
+    width: 100%;
+    text-align: center;
+  }
+
+  footer .details a,
+  footer .details p {
+    font-size: 14px;
+  }
+}
