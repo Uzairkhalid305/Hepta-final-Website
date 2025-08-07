@@ -416,7 +416,7 @@ nav {
 /* Tablets and smaller */
 @media (max-width: 1024px) {
     #home h1 {
-        font-size: 40px;
+        font-size: 80px;
         margin-top: 20rem;
     }
 
@@ -480,69 +480,85 @@ nav {
     }
 }
 
-/* Large phones / small tablets */
-@media (max-width: 768px) {
-    #home {
-        height: 100vh;
-        margin-top: -100px;
-    }
+/* Medium phones to small tablets (480px - 768px) */
+@media (min-width: 480px){
+  #home {
+    width: 100%;
+      height: 100vh;
+      margin-top: -100px;
+  }
 
-    #home h1 {
-        font-size: 60px;
-        margin-top: 60px;
-    }
+  #home h1 {
+      font-size: 55px;
+      margin-top: 80px;
+  }
 
-    #home p {
-        font-size: 22px;
-        padding: 0 20px;
-    }
+  #home p {
+      font-size: 18px;
+      padding: 0 30px;
+      margin-top: 15px;
+  }
 
-    #home button {
-        padding: 18px 36px;
-        font-size: 16px;
-    }
+  #home .home button,
+  #home button {
+      padding: 18px 50px;
+      font-size: 15px;
+      border: 1px solid rgb(255, 255, 255);
+  }
 
-    .scroll-down {
-        font-size: 24px;
-    }
+  .scroll-down {
+      font-size: 16px;
+  }
 
-    .arrow {
-        font-size: 20px;
-    }
+  .arrow {
+      font-size: 14px;
+  }
+}
+@media (min-width: 767px) {
+  #home {
+    height: 100vh;
+    margin-top: -100px;
+    padding: 0 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #home h1 {
+    font-size: 60px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    line-height: 1.2em;
+  }
+
+  #home p {
+    font-size: 20px;
+    line-height: 1.5em;
+    margin-top: 10px;
+  }
+
+  #home button {
+    padding: 16px 36px;
+    font-size: 16px;
+    border: 2px solid #fff;
+    margin-top: 30px;
+    letter-spacing: 1px;
+  }
+
+  .scroll-down {
+    margin-top: 50px;
+    font-size: 16px;
+  }
+
+  .arrow {
+    font-size: 14px;
+  }
 }
 
-/* Small phones */
-@media (max-width: 480px) {
-    #home {
-        height: 100vh;
-        margin-top: -100px;
-    }
 
-    #home h1 {
-        font-size: 40px;
-        margin-top: 120px;
-    }
 
-    #home p {
-        font-size: 14px;
-        margin-top: 20px;
-
-    }
-
-    #home .home button {
-        padding: 20px 60px;
-        font-size: 14px;
-        border: 1px solid rgb(255, 255, 255);
-    }
-
-    .scroll-down {
-        font-size: 10px;
-    }
-
-    .arrow {
-        font-size: 10px;
-    }
-}
 
 /* Very small phones */
 @media (max-width: 360px) {
@@ -970,12 +986,15 @@ nav {
 /* Very small phones */
 @media (max-width: 480px) {
     .headings h1 {
-        font-size: 1.6rem;
+        font-size: 2rem;
+        width: 100%;
     }
 
     .headings p {
-        font-size: 0.95rem;
-        line-height: 1.6rem;
+        font-size: 0.90rem;
+        line-height: 1.4rem;
+        width: 100%;
+        margin-top: 20px;
     }
 
     .box-items .item {
@@ -1133,31 +1152,37 @@ nav {
 }
 
 /* Phones */
-@media (max-width: 480px) {
+@media (min-width: 270px) and (max-width: 480px) {
   #gallery-section h2 {
-    font-size: 36px;
+    text-align: center;
+    width: 100%;
+    font-size: 25px; /* Slightly smaller for very small screens */
   }
 
   #gallery-section p {
-    font-size: 16px;
-    line-height: 1.8rem;
+    font-size: 12px;
+    width: 100%;
+    margin-top: 10px;
+    line-height: 1.5rem;
   }
 
   .nav-icon {
-    font-size: 20px;
-    padding: 4px;
+    font-size: 18px;
+    padding: 3px;
   }
 
   .nav-icon.left,
   .nav-icon.right {
-    /* font-size: 30px; */
     display: none;
   }
 
   .main-display img {
-    max-height: 350px;
+    max-height: 250px; /* Adjusted for smaller screens */
+    width: 100%;
+    height: auto;
   }
 }
+
 
 
 
@@ -1317,36 +1342,38 @@ nav {
 }
 
 /* Phones */
-@media (max-width: 480px) {
+@media (min-width: 270px) and (max-width: 480px) {
   #blogs .headings h1 {
-    font-size: 30px;
+    font-size: 30px; /* Reduced a bit for smaller screens */
   }
 
   #blogs .headings p {
-    font-size: 14px;
-    line-height: 1.3rem;
+    font-size: 13px;
+    width: 100%;
+    line-height: 1.4rem;
     color: rgb(230, 230, 230);
   }
 
   .blog-items .items h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .items h4 {
-    font-size: 13px;
-    letter-spacing: 0.1rem;
+    font-size: 12px;
+    letter-spacing: 0.05rem;
   }
 
   .blog-items .items p {
-    font-size: 16px;
-    line-height: 1.8rem;
+    font-size: 14px;
+    line-height: 1.6rem;
   }
 
-  .items {
-    /* margin: 5px; */
+  .blog-items .items {
     width: 100%;
+    margin-bottom: 20px; /* Optional: add spacing between stacked items */
   }
 }
+
 
 
 /*  */
@@ -1587,42 +1614,41 @@ nav {
 
 
 /* Extra Small Devices (Very Small Phones: <400px) */
-@media (max-width: 480px) {
+@media (min-width: 270px) and (max-width: 480px) {
   #destin {
-    padding: 20px 0;
+    padding: 15px 0;
   }
 
   .destin-item h2 {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   #destin p {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 12px;
+    line-height: 20px;
   }
 
   .stars {
-    /* flex-direction: column; */
-    /* align-items: flex-start; */
     display: flex;
-    gap: 5px;
+    /* flex-wrap: nowrap; */
+    /* gap: 4px; */
   }
 
   .stars h3 {
     padding-left: 0;
-    font-size: 14px;
+    font-size: 10px;
   }
-  .stars h3 i{
-    /* float: right; */
-    padding-left: 1.8rem;
-    font-size: 12px;
+
+  .stars h3 i {
+    font-size: 10px;
     font-weight: 400;
   }
 
   .stars i {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
+
 
 @media (max-width: 1024px) {
   .destin-items {
